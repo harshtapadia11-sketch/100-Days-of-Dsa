@@ -1,0 +1,51 @@
+// Problem: Write a program to perform addition of two matrices having the same dimensions. The sum of two matrices is obtained by adding corresponding elements of the matrices.
+
+// Input:
+// - First line: two integers m and n representing the number of rows and columns
+// - Next m lines: n integers each representing the elements of the first matrix
+// - Next m lines: n integers each representing the elements of the second matrix
+
+// Output:
+// - Print the resultant matrix after addition, with each row on a new line and elements separated by spaces
+
+
+#include <stdio.h>
+
+int main() {
+    int m, n;
+
+    scanf("%d %d", &m, &n);
+
+    int a[m][n], b[m][n];
+
+    // Input first matrix
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // Input second matrix
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    // Add and store result in first matrix
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++) {
+            a[i][j] = a[i][j] + b[i][j];
+        }
+    }
+
+    // Print result
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++) {
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
